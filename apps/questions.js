@@ -123,7 +123,7 @@ questionRouter.delete("/:id/answer", async (req, res) => {
   const collection = db.collection("answer");
   const qsId = req.params.id
 
-  //ลบ answer พอกดลบอีกครั้งกลายเป็นสร้าง answer 1 อัน
+  //ลบ answer พอกดลบอีกครั้งกลายเป็นสร้าง answer 1 อัน เป็นเพราะ ปุ่มอยู่ใกล้กัน พอกดแล้วการทำงานเลยมีความซ้ำซ้อนกัน(ระยะการถูกกดของปุ่มอาจจะทับซ้อนกัน) พอเอาออกห่างแล้วเป็นปกติ ไม่มีการสร้างเพิ่ม
   //http://localhost:4000/questions/${params.id}/answer?deleteAll=delete`
   // const deleteAll = req.query.deleteAll
   // //console.log(deleteAll)
@@ -144,7 +144,7 @@ questionRouter.delete("/:id/answer", async (req, res) => {
 });
 
 
-//ลบ answer ทั้งหมด พอกดลบอีกครั้งกลายเป็นสร้าง answer 1 อัน
+//ลบ answer ทั้งหมด พอกดลบอีกครั้งกลายเป็นสร้าง answer 1 อัน เป็นเพราะ ปุ่มอยู่ใกล้กัน พอกดแล้วการทำงานเลยมีความซ้ำซ้อนกัน(ระยะการถูกกดของปุ่มอาจจะทับซ้อนกัน) พอเอาออกห่างแล้วเป็นปกติ ไม่มีการสร้างเพิ่ม
 questionRouter.delete("/:id/answer/deleteAll", async (req, res) => {
   const collection = db.collection("answer");
   const qsId = req.params.id
